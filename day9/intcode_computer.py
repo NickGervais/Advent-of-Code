@@ -39,7 +39,14 @@ class IntcodeComputer:
                 inst = inst[:-1]
         return opcode, modes
 
+    def expand_intcode(self):
+        # double intcode size filling with 0
+        self.intcode.extend([0 for _ in range(len(self.intcode))])
+
     def get_val(self, param: int, mode: int) -> int:
+        if param >= len(self.intcode) or self.relative_base + param >= len(self.intcode):
+            self.expand_intcode()
+
         if mode == 0:
             return self.intcode[param]
         elif mode == 1:
@@ -49,10 +56,13 @@ class IntcodeComputer:
         
     def set_val(self, opcode: int, param: int, mode: int, value: int):
         num_params = self.opcode_params[opcode]
+        if param >= len(self.intcode) or self.pointer + num_params >= len(self.intcode) or self.relative_base + param >= len(self.intcode):
+            self.expand_intcode()
+
         if mode == 0:
             self.intcode[param] = value
         elif mode == 1:
-            self.intcode[self.pointer + num_params + 1] = value
+            self.intcode[self.pointer + num_params] = value
         elif mode == 2:
             self.intcode[self.relative_base + param] = value
 
