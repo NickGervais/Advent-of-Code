@@ -42,6 +42,9 @@ def part_1(rules, inputs):
     print(total_valid)
 
 part_1(rules, inputs)
+# solution: 279
+
+
 
 
 
