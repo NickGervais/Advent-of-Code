@@ -1,6 +1,12 @@
-### Day 13:  ###
+### Day 24: Lobby Layout ###
 
-lines = []
+import re
+
+directions = []
 with open('input.txt', 'r') as input:
     for i, line in enumerate(input):
-        lines.append(line.rstrip())
+        line = line.rstrip()
+        directions.append(re.findall('(se|sw|e|w|ne|nw)', line))
+
+print(directions)
+
