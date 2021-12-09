@@ -29,20 +29,18 @@ print([int(i) for i in problem_input.split('\n')])
 # 263], 'output': 7}
 # ]
 
-# def answer(input, level, test=None):
-#     if not isinstance(input, list):
-#         input = [int(i) for i in input.split('\n')]
+def answer(input, level, test=None):
+    if not isinstance(input, list):
+        input = [int(i) for i in input.split('\n')]
     
-#     if level == 1:
-#         total_larger = 0
-#         for i in range(1, len(input)):
-#             if input[i] > input[i-1]:
-#                 total_larger += 1
+    if level == 1:
+        total_larger = 0
+        for i in range(1, len(input)):
+            if input[i] > input[i-1]:
+                total_larger += 1
 
-#         return total_larger
-#     if level == 2:
-#         return
-
-
+        return total_larger
+    if level == 2:
+        return
 
 # aoc_utils.run(answer, test_cases=test_cases, year=year, day=day)
