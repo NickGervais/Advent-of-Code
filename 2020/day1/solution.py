@@ -11,7 +11,7 @@ def part_1(target_sum):
             else:
                 seen_expenses.add(expense)
 
-print(part_1(2020))
+# print(part_1(2020))
 # solution: 444019
 
 def part_2(target_sum):
@@ -28,5 +28,14 @@ def part_2(target_sum):
                 if a_expense + b_expense + c_expense == target_sum:
                     return a_expense * b_expense * c_expense
 
-print(part_2(2020))
+# print(part_2(2020))
 # solution: 29212176
+
+
+expenses = []
+with open('input.txt', 'r') as file:
+    for line in file:
+        expenses.append(int(line))
+
+print(expenses)
+
