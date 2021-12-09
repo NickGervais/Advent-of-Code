@@ -1,4 +1,4 @@
-# Advent of Code 2019
+# Advent of Code
 
 This are my solutions to the Advent of Code coding challenges found [here](https://adventofcode.com/).
 
