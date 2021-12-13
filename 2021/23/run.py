@@ -1,5 +1,6 @@
 import os
 from aoc_utils import aoc_utils
+from collections import defaultdict
 
 year, day = os.getcwd().split('/')[-2:]
 
@@ -8,22 +9,13 @@ test_cases = [
 ]
 
 def answer(problem_input, level, test=None):
-    l = []
-    il = []
+    lines = []
     for line in problem_input.split('\n'):
-        l.append(line.strip())
-        il.append(int(line.strip()))
+        lines.append(line.strip())
 
-    if level == 1:
-        a = 0
-        for i in il:
-            a += i
-        return
-
-    if level == 2:
-        a = 0
-        for i in il:
-            a += i
+    if level == 1 or level == 2:
+        for l in lines:
+            pass
         return
 
 aoc_utils.run(answer, test_cases=test_cases, year=year, day=day)

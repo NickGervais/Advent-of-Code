@@ -1,8 +1,6 @@
 import os
-import time
 from aoc_utils import aoc_utils
 from collections import defaultdict
-from numpy import np
 
 year, day = os.getcwd().split('/')[-2:]
 
