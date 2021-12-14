@@ -4,9 +4,8 @@ year = 2021
 day = 1
 
 problem_input = aoc_utils.fetch_and_save(year, day)
-print([int(i) for i in problem_input.split('\n')])
 
-# test_cases = [
+test_cases = [
 #     {'level': 1, 'input': [199,
 # 200,
 # 208,
@@ -27,7 +26,7 @@ print([int(i) for i in problem_input.split('\n')])
 # 269,
 # 260,
 # 263], 'output': 7}
-# ]
+]
 
 def answer(input, level, test=None):
     if not isinstance(input, list):
@@ -41,6 +40,11 @@ def answer(input, level, test=None):
 
         return total_larger
     if level == 2:
-        return
+        total_larger = 0
+        for i in range(1, len(input)):
+            if sum(input[i:i+3]) > sum(input[i-1:i+2]):
+                total_larger += 1
 
-# aoc_utils.run(answer, test_cases=test_cases, year=year, day=day)
+        return total_larger
+
+aoc_utils.run(answer, test_cases=test_cases, year=year, day=day)

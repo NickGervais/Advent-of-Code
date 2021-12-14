@@ -9,10 +9,17 @@ test_cases = [
 ]
 
 def calc_count_map(count_map, template):
+    # turn pairs into count per each character.
+    # ex: {'NC': 2, 'CB': 1} -> {'N': 2, 'C': 3, 'B' 1}
     char_count_map = defaultdict(int)
     for pair, count in count_map.items():
         char_count_map[pair[0]] += count
         char_count_map[pair[1]] += count
+
+    # in the previous step we counted each character twice.
+    # except for the last and first character in the string.
+    # So if the character is either the first or last string, add 1 to the total
+    # then divide each value by 2. This accounts for our over counting.
 
     new_char_count_map = defaultdict(int)
     for char, count in char_count_map.items():
@@ -21,6 +28,7 @@ def calc_count_map(count_map, template):
         new_char_count_map[char] = count / 2
     print(new_char_count_map)
     
+    # lastly find the smallest and largest counts.
     max_val = -1
     min_val = float('inf')
     for char, count in new_char_count_map.items():
@@ -78,8 +86,5 @@ def answer(problem_input, level, test=None):
         #     result = max_val - min_val
         #     print(f'{max_val} - {min_val} = {result}')
         # return result
-
-                
-
 
 aoc_utils.run(answer, test_cases=test_cases, year=year, day=day)
