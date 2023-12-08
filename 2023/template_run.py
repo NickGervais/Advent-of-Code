@@ -1,6 +1,8 @@
 import os
 from aoc_utils import aoc_utils
-
+from collections import defaultdict
+from dataclasses import dataclass
+import re
 
 year, day = os.getcwd().split('/')[-2:]
 
