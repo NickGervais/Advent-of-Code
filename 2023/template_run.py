@@ -7,7 +7,7 @@ import re
 year, day = os.getcwd().split('/')[-2:]
 
 test_cases = [
-    # {'level': 1, 'input': '', 'output': ''},
+    # {'level': 1, 'input': '''''', 'output': ''},
 ]
 
 
