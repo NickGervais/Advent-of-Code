@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "./.venv/bin/python3.12",
+    "python.analysis.extraPaths": [
+        "./aoc_utils"
+    ]
+}
