@@ -1,10 +1,17 @@
 import os
-from aoc_utils import aoc_utils
 from collections import defaultdict
 from dataclasses import dataclass
 import re
 
-year, day = os.getcwd().split('/')[-2:]
+from pydantic import BaseModel
+
+from aoc_utils import aoc_utils
+
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+day = os.path.basename(script_dir)
+year = os.path.basename(os.path.dirname(script_dir))
+
 
 test_cases = [
     # {'level': 1, 'input': '''''', 'output': ''},
